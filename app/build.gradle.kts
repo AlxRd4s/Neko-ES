@@ -11,6 +11,7 @@ plugins {
 
 if (gradle.startParameter.taskRequests.toString().contains("Standard")) {
     apply(mapOf("plugin" to "com.google.gms.google-services"))
+   // apply(mapOf("plugin" to "com.google.gms.google-services:4.3.10"))
     apply(mapOf("plugin" to "com.google.firebase.crashlytics"))
 }
 
@@ -148,7 +149,8 @@ dependencies {
     implementation(libs.sqlite.android)
 
     // Dependency injection
-    implementation(libs.injekt.core)
+    //Desactive esta opcion
+    //implementation(libs.injekt.core)
 
     // Image library
     implementation(libs.bundles.coil)
@@ -157,6 +159,7 @@ dependencies {
     implementation(libs.timber)
 
     // Required outsde of version catalog cause aar
+    implementation("uy.kohesive.injekt:injekt-core:1.16.+")
     implementation("com.github.inorichi.storio:storio-common:8be19de@aar")
     implementation("com.github.inorichi.storio:storio-sqlite:8be19de@aar")
     implementation("com.mikepenz:community-material-typeface:7.0.96.1-kotlin@aar")
@@ -189,7 +192,7 @@ dependencies {
     implementation(libs.tokenbucket)
     implementation(libs.bundles.sandwich)
     implementation(libs.aboutLibraries.compose)
-    debugImplementation(libs.leakcanary)
+    //debugImplementation(libs.leakcanary)
 
     implementation(libs.bundles.results)
 
